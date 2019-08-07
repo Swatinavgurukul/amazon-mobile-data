@@ -8,13 +8,13 @@ soup = BeautifulSoup(req_data, 'html.parser')
 # print (soup)
 data = soup.find('div',class_="lp s-padding-left-small twoColumn" )
 # print data
-mobile_name = data.find_all('div',class_="crwBucket" )
-print mobile_name
-for i in mobile_name:
-    mobile_name1 = i.find('div',class_="crwTitle" ).a.get_text()
-    print mobile_name1
-    mobile_Ru = i.find('span',class_="crwActualPrice").get_text()
+mobile_class = data.find_all('div',class_="crwBucket" )
+# print mobile_class
+for mobile_data in mobile_class:
+    mobile_name = mobile_data.find('div',class_="crwTitle" ).a.get_text()
+    print mobile_name
+    mobile_Ru = mobile_data.find('span',class_="crwActualPrice").get_text()
     print mobile_Ru
-    # mobile_link = i.find('div',class_="crwProductImage").a["href"]
-    # print mobile_link.get_text()
+    # mobile_img = mobile_data.find('div',class_="crwProductImage").img.src
+    # print mobile_img
     
